@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
-
+import resume from '../../assets/pdf/Web developer resume of Md Tofazzol Hossain Manik.pdf'
 import './Landing.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { headerData } from '../../data/headerData';
+// import { headerData } from '../../data/headerData';
 import { socialsData } from '../../data/socialsData';
 
 import {
@@ -14,6 +14,7 @@ import {
     FaGithub,
     FaYoutube,
     FaBlogger,
+    FaFacebook,
 } from 'react-icons/fa';
 
 function Landing() {
@@ -101,20 +102,20 @@ function Landing() {
                                 />
                             </a>
                         )}
-                        {/* {socialsData.twitter && (
+                        {socialsData.facebook && (
                             <a
-                                href={socialsData.twitter}
+                                href={socialsData.facebook}
                                 target='_blank'
                                 rel='noreferrer'
                             >
-                                <FaTwitter
+                                <FaFacebook
                                     className='landing--social'
                                     style={{ color: theme.secondary }}
                                     aria-label='Twitter'
                                 />
                             </a>
                         )}
-                        {socialsData.youtube && (
+                        {/* {socialsData.youtube && (
                             <a
                                 href={socialsData.youtube}
                                 target='_blank'
@@ -143,7 +144,7 @@ function Landing() {
                     </div>
                 </div>
                 <img
-                    src={headerData.image}
+                    src='https://i.ibb.co/3pM6ZjY/rsz-11690137030525.jpg'
                     alt=''
                     className='landing--img'
                     style={{
@@ -159,20 +160,20 @@ function Landing() {
                         className='lcr--content'
                         style={{ color: theme.tertiary }}
                     >
-                        <h6>{headerData.title}</h6>
-                        <h1>{headerData.name}</h1>
-                        <p>{headerData.desciption}</p>
+                        <h6>Web Developer</h6>
+                        <h1>Md Tofazzol Hossain Manik</h1>
+                        <p>Life may be a meandering path but don't worry about it, rather enjoy it. It is about the journey, not the destination so explore all that comes your way, learn and grow from it, for this journey only happens once.</p>
 
                         <div className='lcr-buttonContainer'>
-                            {headerData.resumePdf && (
+                            {resume && (
                                 <a
-                                    href={headerData.resumePdf}
+                                    href={resume}
                                     download='resume'
                                     target='_blank'
                                     rel='noreferrer'
                                 >
                                     <Button className={classes.resumeBtn}>
-                                        Download CV
+                                       Get Resume
                                     </Button>
                                 </a>
                             )}

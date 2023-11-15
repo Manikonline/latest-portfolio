@@ -72,6 +72,7 @@ export const bwThemeLight = {
     expimg: expBlack,
     contactsimg: contactsBlack
 }
+
 export const bwThemeDark = {
     type: 'dark',
     primary: '#B6B6B6',
