@@ -5,13 +5,13 @@ import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
 import { HiDocumentText } from 'react-icons/hi';
 import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
-import { FaUser, FaFolderOpen } from 'react-icons/fa';
+import { FaUser, FaFolderOpen, FaBriefcase } from 'react-icons/fa'; // Import the new icon for Experience
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
 
 import './Navbar.css';
-import { headerData } from '../../data/headerData';
+// import { headerData } from '../../data/headerData';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Navbar() {
@@ -87,11 +87,11 @@ function Navbar() {
             background: theme.secondary,
             color: theme.primary,
             width: '85%',
-            height: '60px',
+            height: '45px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-evenly',
-            padding: '0 30px',
+            
             boxSizing: 'border-box',
             border: '2px solid',
             borderColor: theme.primary,
@@ -125,21 +125,12 @@ function Navbar() {
 
     const classes = useStyles();
 
-    const shortname = (name) => {
-        if (name.length > 12) {
-            return name.split(' ')[0];
-        } else {
-            return name;
-        }
-    };
-
     return (
         <div className='navbar'>
-            <div  className='navbar--container'>
-                <h1 style={{ color: theme.secondary }}>
-                    {shortname(headerData.name)}
+            <div className='navbar--container'>
+                <h1>
+                    <span>Manik</span>
                 </h1>
-
                 <IoMenuSharp
                     className={classes.navMenu}
                     onClick={handleDrawerOpen}
@@ -178,7 +169,6 @@ function Navbar() {
                     />
                 </div>
                 <br />
-
                 <div onClick={handleDrawerClose}>
                     <div className='navLink--container'>
                         <Fade left>
@@ -198,7 +188,6 @@ function Navbar() {
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
                             <NavLink
                                 to='/#about'
@@ -214,7 +203,6 @@ function Navbar() {
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
                             <NavLink
                                 to='/#education'
@@ -232,7 +220,6 @@ function Navbar() {
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
                             <NavLink
                                 to='/#skills'
@@ -250,7 +237,6 @@ function Navbar() {
                                 </div>
                             </NavLink>
                         </Fade>
-
                         <Fade left>
                             <NavLink
                                 to='/#projects'
@@ -268,7 +254,24 @@ function Navbar() {
                                 </div>
                             </NavLink>
                         </Fade>
-
+                        <Fade left>
+                            {/* New Experience Link */}
+                            <NavLink
+                                to='/#experience' // Update the 'to' attribute with the appropriate value
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <div className={classes.drawerItem}>
+                                    <FaBriefcase
+                                        className={classes.drawerIcon} // Use the new icon for Experience
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        Experience
+                                    </span>
+                                </div>
+                            </NavLink>
+                        </Fade>
                         <Fade left>
                             <NavLink
                                 to='/#contacts'
@@ -292,3 +295,4 @@ function Navbar() {
 }
 
 export default Navbar;
+// main code stored in the bottom of the css file

@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { ThemeContext } from './contexts/ThemeContext';
-import { Main, BlogPage, ProjectPage } from './pages'
+import { Main, BlogPage,} from './pages'
 import { BackToTop } from './components'
 import ScrollToTop from './utils/ScrollToTop'
 
 import './App.css'
+import { StyledEngineProvider } from '@mui/material';
 
 function App() {
 
@@ -19,14 +20,16 @@ function App() {
   return (
     <div className="app">
       <Router>
+        <StyledEngineProvider inj>
         <ScrollToTop/>
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/blog" exact component={BlogPage} />
-          <Route path="/projects" exact component={ProjectPage} />
+          {/* <Route path="/projects" exact component={ProjectPage} /> */}
 
           <Redirect to="/" />
         </Switch>
+        </StyledEngineProvider>
       </Router>
       <BackToTop />
     </div>

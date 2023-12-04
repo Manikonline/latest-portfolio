@@ -16,14 +16,15 @@ function About() {
               <div className="style-circle" style={{backgroundColor: theme.primary}}></div>
               <div className="style-line" style={{backgroundColor: theme.primary}}></div>
             </div> */}
-            <div className="about-body">
+            <div className="about-body pt-5 pb-16">
                 <div className="about-description">
-                    <h2 style={{color: theme.primary}}>{aboutData.title}</h2>
+                    <h2 className='about-title' style={{color: theme.primary}}>{aboutData.title}</h2>
                     <p style={{color:theme.tertiary80}}>{aboutData.description1}<br/><br/>{aboutData.description2}</p>
                 </div>
                 <div className="about-img">
                     <img 
-                        src={aboutData.image === 2 ? theme.aboutimg1 : theme.aboutimg2}  
+                    className='img-fluid rounded' 
+                        src='https://i.ibb.co/gFBnhm6/boy-with-computer.png'
                         alt="" 
                     />
                 </div>

@@ -16,6 +16,7 @@ import {
     FaBlogger,
     FaFacebook,
 } from 'react-icons/fa';
+import Typical from 'react-typical';
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
@@ -70,6 +71,7 @@ function Landing() {
 
     return (
         <div className='landing'>
+            
             <div className='landing--container'>
                 <div
                     className='landing--container-left'
@@ -160,9 +162,17 @@ function Landing() {
                         className='lcr--content'
                         style={{ color: theme.tertiary }}
                     >
-                        <h6>Web Developer</h6>
+                         <Typical loop={Infinity} steps={[
+                                  "Web Developer",500, 
+                                  "Front End Developer",500,
+                                  "Full Stack Developer",500,
+                                  "React.JS Developer",500,
+                                  "MERN Stack Developer",500,
+                              ]}>
+  
+                              </Typical>
                         <h1>Md Tofazzol Hossain Manik</h1>
-                        <p>Life may be a meandering path but don't worry about it, rather enjoy it. It is about the journey, not the destination so explore all that comes your way, learn and grow from it, for this journey only happens once.</p>
+                        <p>Frustration? sadness? failure? Just Smile and Get up! Go ahead. Nobody  pays attention  of the losers...!</p>
 
                         <div className='lcr-buttonContainer'>
                             {resume && (

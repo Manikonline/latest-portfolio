@@ -11,7 +11,7 @@ function Experience() {
 
     const { theme } = useContext(ThemeContext);
     return (
-        <div className="experience" id="experience" style={{backgroundColor: theme.secondary}}> 
+        <div className="experience md:pt-8" id="experience" style={{backgroundColor: theme.secondary}}> 
              <div className="experience-body">
                  <div className="experience-image">
                      <img src={theme.expimg} alt="" />
@@ -33,4 +33,4 @@ function Experience() {
     )
 }
 
-export default Experience
+export default Experience;
